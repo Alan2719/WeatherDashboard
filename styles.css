@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Search column*/
+.title {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.container-fluid .row .col-3 {
+    background-color: rgb(245, 245, 245);
+    box-shadow: 1px 0px 5px rgba(0,0,0,.3);
+    padding: 10px;
+}
+
+.container-fluid .row .col-3 .cities {
+    background-color: white;
+    margin-top: 10px;
+    height: 500px;
+}
+
+.container-fluid .row .col-3 .cities table {
+    text-align: center;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    width: 100%;
+}
+
+.container-fluid .row .col-3 .cities table tr{
+    text-align: center;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    font-size: 20px;
+}
+
+/*Display weather column*/
+.container-fluid .row .col-9 .row .display-info {
+    margin: 10px;
+    border: solid 1px black;
+    /*width: 100%;*/
+    border-radius: 0.3em;
+}
+
+.container-fluid .row .col-9 .row .col-12 .display-info {
+    padding: 20px;
+}
