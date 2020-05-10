@@ -48,6 +48,43 @@ body {
     border-radius: 0.3em;
 }
 
+.container-fluid .row .col-9 .row .display-info #icon {
+    float: right;
+    margin-top: -45px;
+    margin-right: 280px;
+}
+
 .container-fluid .row .col-9 .row .col-12 .display-info {
     padding: 20px;
+}
+
+.container-fluid .row .col-6 .row .col-12 .display-info.box {
+    border: solid 1px black;
+    background-color: blue;
+    width: 50%;
+}
+
+.container-fluid .row .col-9 .row .col-12 .display-info .uvContainer {
+    border: solid 1px black;
+    border-radius: 0.3em;
+}
+
+/*Second row*/
+.container-fluid .row .forecast {
+    width: 95%;
+    margin: 10px auto;
+    padding: 15px;
+}
+
+.container-fluid .row .col-2 {
+    background-color: rgb(72, 90, 252);
+    height: 200px;
+    border: solid 1px black;
+    border-radius: 0.3em;
+    margin: 0 10px;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 20%;
 }
