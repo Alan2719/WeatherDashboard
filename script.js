@@ -1,36 +1,47 @@
 $(document).ready(function() {
 
 //Variables
-var city = "";
 var currentDay = moment().format("MMM Do YYYY");
 var apiKey = "ffecaf895550a5879fcebbee707b0654";
-var currentIndex = localStorage.length;
 console.log(currentIndex);
+var citiesArray = [];
+var currentIndex = localStorage.length;
+
 
 //Search Button
 $("#searchBtn").on('click',function(event){
     event.preventDefault();
-    city = $("#search").val();
-    var row = $("<tr>");
-    var cityName = $("<td>").html(localStorage.getItem(city));
-    row.html(cityName);
-    $("tbody").append(row);
-    searchCity();
+    var cityInput = $("#search").val();
+    var cityName = $("<li>").html(cityInput);
+    cityName.on('click',function(event){
+        event.preventDefault();
+        var city = $(this).text(); 
+        console.log(city)
+        searchCity(city);
+    })
+    $("#citylist").append(cityName);
+    localStorage.setItem(currentIndex,cityInput);
+    citiesArray.push(cityInput);
+    console.log(citiesArray);
+    var divide = $("<hr>");
+    $("citylist").append(divide);
+    searchCity(cityInput);
 })
 
+
 //Render the qyeryURL link
-function searchCity() {
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+function searchCity(citySearch) {
+    console.log(citySearch);
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + apiKey;
     console.log(queryURL);
-    renderWeather(queryURL);
+    renderWeather(queryURL,citySearch);
 }
 
 //Render the weather specifications
-function renderWeather(queryURL){
+function renderWeather(queryURL,newCity){
     currentIndex += 1;
-    localStorage.setItem(currentIndex,city);
     //var queryURL = "https://cors-anywhere.herokuapp.com/https://samples.openweathermap.org/data/2.5/uvi/forecast?lat=32.53&lon=-117.02&appid=439d4b804bc8187953eb36d2a8c26a02"
-    console.log(localStorage.getItem(city));
+    //console.log(localStorage.getItem(city));
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -58,14 +69,16 @@ function renderWeather(queryURL){
             var indexCont = $("<div>");
             $("#UV").text("UV Index: " + UVvalue.value);
             indexCont.append(UVvalue.value);
-            if (UVvalue.value >= 3 || UVvalue.value <= 5) {
-                indexCont.css("background-color","yellow");
-            } else if (UVvalue.value >= 6 || UVvalue.value <= 7) {
-                indexCont.css("background-color","orange");
-            } else if (UVvalue.value >= 8 || UVvalue.value <= 10) {
-                indexCont.css("background-color","red");
-            } else if (UVvalue.value >= 11) {
-                indexCont.css("background-color","rgb(255, 0, 242)");
+            console.log(UVvalue.value);
+            var uvIndex = UVvalue.value;
+            if (uvIndex >= 3.0 || uvIndex <= 5.0) {
+                indexCont.addClass("yellow");
+            } else if (uvIndex >= 6.0 || uvIndex <= 7.0) {
+                indexCont.addClass("orange");
+            } else if (uvIndex >= 8.0 || uvIndex <= 10.0) {
+                indexCont.addClass("red");
+            } else if (uvIndex >= 11.0) {
+                indexCont.addClass("magenta");
             }
         })
         var queryURL3 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=current,minutely,hourly&appid=" + apiKey;

@@ -23,14 +23,18 @@ body {
 .container-fluid .row .col-3 .cities {
     background-color: white;
     margin-top: 10px;
-    height: 500px;
+    border: solid 1px black;
+    border-radius: 0.3em;
+    padding: 10px;
 }
 
-.container-fluid .row .col-3 .cities table {
+.container-fluid .row .col-3 .cities .list-unstyled {
     text-align: center;
-    border-top: solid 1px black;
-    border-bottom: solid 1px black;
+    font-size: 25px;
+    display: block;
+    list-style-type: none;
     width: 100%;
+    cursor: pointer;
 }
 
 .container-fluid .row .col-3 .cities table tr{
@@ -48,11 +52,11 @@ body {
     border-radius: 0.3em;
 }
 
-.container-fluid .row .col-9 .row .display-info #icon {
+/*.container-fluid .row .col-9 .row .display-info #icon {
     float: right;
     margin-top: -45px;
     margin-right: 280px;
-}
+}*/
 
 .container-fluid .row .col-9 .row .col-12 .display-info {
     padding: 20px;
@@ -87,4 +91,80 @@ body {
     padding: 10px;
     text-align: center;
     width: 20%;
+}
+
+/*.col-xs-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    min-width: 50%;
+}*/
+
+@media (max-width: 1200px) {
+    .container-fluid .row .forecast .row {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-fluid .row .forecast .row {
+        margin-left: 95px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 576px) {
+    .container-fluid .col-9 .row {
+        display: block;
+    }
+    .container-fluid .row .forecast .row .col-2 {
+        width: 200px;
+    }
+}
+
+/*Color classes*/
+.yellow {
+    background-color:yellow;
+    color: black;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: solid 1px black;
+    margin-left: 20px;
+    border-radius: 0.3em;
+}
+
+.orange {
+    background-color:orange;
+    color: black;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: solid 1px black;
+    margin-left: 20px;
+    border-radius: 0.3em;
+}
+
+.red {
+    background-color:red;
+    color: black;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: solid 1px black;
+    margin-left: 20px;
+    border-radius: 0.3em;
+}
+
+.magenta {
+    background-color:rgb(255, 0, 242);
+    color: black;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: solid 1px black;
+    margin-left: 20px;
+    border-radius: 0.3em;
+}
+
+.listBtn {
+    width: 100%;
 }
