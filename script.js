@@ -20,7 +20,8 @@ $("#searchBtn").on('click',function(event){
     })
     $("#citylist").append(cityName);
     citiesArray.push(cityInput);
-    localStorage.setItem('citiesArray',JSON.stringify(citiesArray));
+    //localStorage.setItem('citiesArray',JSON.stringify(citiesArray));
+    localStorage.setItem(currentIndex,cityInput);
     var divide = $("<hr>");
     $("citylist").append(divide);
     searchCity(cityInput);
