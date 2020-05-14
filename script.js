@@ -3,7 +3,6 @@ $(document).ready(function() {
 //Variables
 var currentDay = moment().format("MMM Do YYYY");
 var apiKey = "ffecaf895550a5879fcebbee707b0654";
-console.log(currentIndex);
 var citiesArray = [];
 var currentIndex = localStorage.length;
 
@@ -20,9 +19,8 @@ $("#searchBtn").on('click',function(event){
         searchCity(city);
     })
     $("#citylist").append(cityName);
-    localStorage.setItem(currentIndex,cityInput);
     citiesArray.push(cityInput);
-    console.log(citiesArray);
+    localStorage.setItem('citiesArray',JSON.stringify(citiesArray));
     var divide = $("<hr>");
     $("citylist").append(divide);
     searchCity(cityInput);
