@@ -112,7 +112,9 @@ body {
 }
 
 @media (max-width: 768px) {
-    
+    #search {
+        width: 50%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -167,4 +169,11 @@ body {
 
 .listBtn {
     width: 100%;
+}
+
+.col-xs-12 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
 }
