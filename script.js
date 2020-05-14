@@ -31,7 +31,7 @@ $("#searchBtn").on('click',function(event){
 //Render the qyeryURL link
 function searchCity(citySearch) {
     console.log(citySearch);
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + apiKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + apiKey;
     console.log(queryURL);
     renderWeather(queryURL,citySearch);
 }
@@ -46,7 +46,7 @@ function renderWeather(queryURL,newCity){
         method: "GET"
     }).then(function(response) { 
         var image = response.weather[0].icon;
-        var imgURL = "http://openweathermap.org/img/w/" + image + ".png";
+        var imgURL = "https://openweathermap.org/img/w/" + image + ".png";
         //console.log(response);
         $("#cityName").text(response.name + ", " + response.sys.country + " " + "(" + currentDay + ")");
         $("#icon").attr("src",imgURL);
