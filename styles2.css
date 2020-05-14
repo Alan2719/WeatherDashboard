@@ -1,0 +1,39 @@
+.yellow {
+    background-color:yellow;
+    color: black;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: solid 1px black;
+    margin-left: 20px;
+    border-radius: 0.3em;
+}
+
+.orange {
+    background-color:orange;
+    color: black;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: solid 1px black;
+    margin-left: 20px;
+    border-radius: 0.3em;
+}
+
+.red {
+    background-color:red;
+    color: black;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: solid 1px black;
+    margin-left: 20px;
+    border-radius: 0.3em;
+}
+
+.magenta {
+    background-color:rgb(255, 0, 242);
+    color: black;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: solid 1px black;
+    margin-left: 20px;
+    border-radius: 0.3em;
+}

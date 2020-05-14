@@ -65,19 +65,16 @@ function renderWeather(queryURL,newCity){
             dataType: "json",
             type: "GET"
         }).then(function(UVvalue) {
-            var indexCont = $("<div>");
-            $("#UV").text("UV Index: " + UVvalue.value);
-            indexCont.append(UVvalue.value);
-            console.log(UVvalue.value);
             var uvIndex = UVvalue.value;
-            if (uvIndex >= 3.0 || uvIndex <= 5.0) {
-                indexCont.addClass("yellow");
-            } else if (uvIndex >= 6.0 || uvIndex <= 7.0) {
-                indexCont.addClass("orange");
-            } else if (uvIndex >= 8.0 || uvIndex <= 10.0) {
-                indexCont.addClass("red");
+            $("#uv-text").text("UV Index: " + uvIndex);
+            if (uvIndex >= 3.0 && uvIndex <= 5.0) {
+                $("#UV").addClass("yellow");
+            } else if (uvIndex >= 6.0 && uvIndex <= 7.0) {
+                $("#UV").addClass("orange");
+            } else if (uvIndex >= 8.0 && uvIndex <= 10.0) {
+                $("#UV").addClass("red");
             } else if (uvIndex >= 11.0) {
-                indexCont.addClass("magenta");
+                $("#UV").addClass("magenta");
             }
         })
         var queryURL3 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=current,minutely,hourly&appid=" + apiKey;
