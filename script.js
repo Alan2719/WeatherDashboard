@@ -107,3 +107,5 @@ function renderWeather(queryURL,newCity){
 }
 
 })
+
+//Version final js
